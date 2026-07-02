@@ -64,7 +64,7 @@ const clients = [
   {
     name: "D'Nava",
     category: 'Panadería · Pastelería',
-    logo: '/dnava-logo2.png',
+    logo: `${import.meta.env.BASE_URL}dnava-logo2.png`,
     description:
       'Automatización de operaciones y presencia digital para escalar su negocio artesanal.',
     featured: true,
