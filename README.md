@@ -49,8 +49,9 @@ Sitio publicado en:
 ### Activar Pages (solo la primera vez)
 
 1. En el repo: **Settings** → **Pages**
-2. En **Build and deployment**, elige **Source: GitHub Actions**
-3. Cada push a `main` vuelve a publicar el sitio automáticamente
+2. En **Build and deployment** → **Source**, elige **Deploy from a branch**
+3. En **Branch**, selecciona **`gh-pages`** y carpeta **`/ (root)`**
+4. Guarda. Cada push a `main` vuelve a publicar el sitio automáticamente
 
 ### Contacto en producción
 
