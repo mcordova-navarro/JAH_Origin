@@ -40,42 +40,17 @@ VITE_CONTACT_WHATSAPP_LABEL=+52 55 1234 5678
 
 Reinicia `npm run dev` después de cambiar `.env`.
 
-## Despliegue gratis (GitHub Pages)
+## Despliegue (GitHub Pages)
 
-### 1. Crear repositorio en GitHub
+Sitio publicado en:
 
-1. Entra a [github.com/new](https://github.com/new)
-2. Nombre sugerido: `jah-origin` (o el que prefieras)
-3. Déjalo **público**
-4. **No** marques README ni .gitignore (ya existen en el proyecto)
-5. Clic en **Create repository**
+**https://mcordova-navarro.github.io/JAH_Origin/**
 
-### 2. Subir el código
-
-En la terminal, dentro de esta carpeta:
-
-```bash
-git init
-git add .
-git commit -m "Landing JAH con despliegue GitHub Pages"
-git branch -M main
-git remote add origin https://github.com/TU-USUARIO/jah-origin.git
-git push -u origin main
-```
-
-Reemplaza `TU-USUARIO` y `jah-origin` por tu usuario y nombre del repo.
-
-### 3. Activar GitHub Pages
+### Activar Pages (solo la primera vez)
 
 1. En el repo: **Settings** → **Pages**
 2. En **Build and deployment**, elige **Source: GitHub Actions**
-3. Tras el primer push, el workflow publicará el sitio automáticamente
-
-Tu URL será:
-
-`https://TU-USUARIO.github.io/jah-origin/`
-
-(La URL usa el **nombre exacto del repositorio**.)
+3. Cada push a `main` vuelve a publicar el sitio automáticamente
 
 ### Contacto en producción
 
