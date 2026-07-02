@@ -64,23 +64,26 @@ const clients = [
   {
     name: "D'Nava",
     category: 'Panadería · Pastelería',
-    logo: `${import.meta.env.BASE_URL}dnava-logo2.png`,
+    initials: 'DN',
     description:
-      'Automatización de operaciones y presencia digital para escalar su negocio artesanal.',
+      'Alianza activa en automatización de operaciones y presencia digital para escalar su negocio artesanal.',
+    highlights: ['Procesos conectados', 'Presencia digital', 'Soporte continuo'],
     featured: true,
   },
   {
     name: 'Próximamente',
     category: 'Retail',
-    logo: null,
+    initials: '—',
     description: 'Espacio reservado para nuestra próxima alianza estratégica.',
+    highlights: [],
     featured: false,
   },
   {
     name: 'Próximamente',
     category: 'Servicios',
-    logo: null,
+    initials: '—',
     description: 'Construyendo historias de crecimiento junto a más empresas.',
+    highlights: [],
     featured: false,
   },
 ]
@@ -261,11 +264,17 @@ export default function App() {
           <div className="container">
             <div className="section__head reveal">
               <p className="eyebrow">Clientes</p>
-              <h2>Empresas que confían en nosotros</h2>
+              <h2>Alianzas que generan resultados reales</h2>
               <p>
-                Cada proyecto es una alianza. Acompañamos negocios reales con soluciones
-                tecnológicas que generan impacto tangible.
+                Trabajamos con empresas que buscan crecer con tecnología seria, procesos
+                claros y acompañamiento de principio a fin.
               </p>
+            </div>
+
+            <div className="clients-trust-bar reveal">
+              <span>✓ Proyectos activos</span>
+              <span>✓ Metodología transparente</span>
+              <span>✓ Resultados medibles</span>
             </div>
 
             <div className="clients-grid">
@@ -275,26 +284,29 @@ export default function App() {
                   className={`client-card reveal ${client.featured ? 'client-card--featured' : ''}`}
                   style={{ animationDelay: `${i * 100}ms` }}
                 >
-                  <div className="client-card__logo-wrap">
-                    {client.logo ? (
-                      <img
-                        src={client.logo}
-                        alt={`Logo de ${client.name}`}
-                        className="client-card__logo"
-                        loading="lazy"
-                      />
-                    ) : (
-                      <div className="client-card__placeholder">
-                        <LightningLogo />
-                      </div>
+                  <div className="client-card__header">
+                    <div className={`client-card__monogram ${client.featured ? 'client-card__monogram--featured' : ''}`}>
+                      {client.initials}
+                    </div>
+                    {client.featured && (
+                      <span className="client-card__verified" title="Cliente verificado">
+                        ✓ Verificado
+                      </span>
                     )}
                   </div>
                   <div className="client-card__body">
                     <span className="client-card__category">{client.category}</span>
                     <h3>{client.name}</h3>
                     <p>{client.description}</p>
+                    {client.highlights.length > 0 && (
+                      <ul className="client-card__highlights">
+                        {client.highlights.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                    )}
                     {client.featured && (
-                      <span className="client-card__badge">Cliente activo</span>
+                      <span className="client-card__badge">Alianza activa</span>
                     )}
                   </div>
                 </article>
